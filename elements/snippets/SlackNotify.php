@@ -31,7 +31,7 @@ $username = $modx->getOption('slacknotify.username', null);
 $payload = array(
 	'username'=>$username,
 	'channel'=>$channel,
-	'text'=>'*Error report for:* testsite.com'
+	'text'=>'*Error report for: testsite.com*'
 	);
 $attachments = array(array(
 	'fallback'=>'This is a fallback message',
