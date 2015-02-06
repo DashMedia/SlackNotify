@@ -34,8 +34,8 @@
     "extra": {
         "package_name": "SlackNotify",
         "namespace": "slacknotify",
-        "version": "1.0.0",
-        "release": "pl",
+        "version": "0.1.0",
+        "release": "beta",
         "category": "Slack Notify"
     }
 }
