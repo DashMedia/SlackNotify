@@ -1,0 +1,41 @@
+{
+    "name": "dashmedia/slack-notify",
+    "description": "",
+    "type": "modx-package",
+    "keywords": [
+        "modx",
+        "repoman"
+    ],
+    "homepage": "https://github.com/craftsmancoding/repo-starter",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Your Name Here",
+            "email": "you@email.com",
+            "homepage": "https://craftsmancoding.com/"
+        }
+    ],
+    "support": {
+        "email": "donotreply@yoursite.com",
+        "issues": "https://github.com/craftsmancoding/repo-starter/issues",
+        "forum": "http://forums.modx.com/",
+        "wiki": "https://github.com/craftsmancoding/repo-starter/wiki",
+        "source": "https://github.com/craftsmancoding/repo-starter.git"
+    },
+    "require": {
+        "php": ">=5.3",
+        "guzzlehttp/guzzle": "~5.0"
+    },
+    "autoload": {
+        "classmap": [
+            "model/"
+        ]
+    },
+    "extra": {
+        "package_name": "SlackNotify",
+        "namespace": "slacknotify",
+        "version": "1.0.0",
+        "release": "pl",
+        "category": "Slack Notify"
+    }
+}
