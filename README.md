@@ -1,4 +1,4 @@
-#Slak Notify
+#Slack Notify
 
 On install, please add a webhooks url and set some defaults in the slacknotify section of your system settings
 
