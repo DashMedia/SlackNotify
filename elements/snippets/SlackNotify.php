@@ -39,12 +39,19 @@ $username = $modx->getOption('slacknotify.username', null);
 
 //Grab script properties settings
 $text = $modx->getOption('text', $scriptProperties,'');
-$color = $modx->getOption('color', $scriptProperties,'#D0000');
+$color = $modx->getOption('color', $scriptProperties,'#D00000');
 $fields = $modx->getOption('fields', $scriptProperties,null);
 
 // Override system settings if set on scriptPorperties
-$channel = $modx->getOption('channel', $scriptProperties, $channel);
-$username = $modx->getOption('username', $scriptProperties, $username);
+$passed_channel = $modx->getOption('channel', $scriptProperties, null);
+$passed_username = $modx->getOption('botname', $scriptProperties, null);
+
+if(!empty($passed_channel)){
+	$channel = $passed_channel;
+}
+if(!empty($passed_username)){
+	$username = $passed_username;
+}
 
 $payload = array(
 	'username'=>$username,
@@ -52,7 +59,7 @@ $payload = array(
 	'text'=>$text
 	);
 
-if(!empty($fallback) && !empty($fields) && !empty($color)){
+if(!empty($fields) && !empty($color)){
 	//if we have all the required fields, add attachemnts
 
 	$fieldsArray = json_decode($fields);
@@ -76,7 +83,7 @@ try {
     $postBody->setField('payload',json_encode($payload));
     $response = $client->send($request);
 } catch (Exception $e) {
-	$modx->log(MODX::LOG_LEVEL_ERROR, 'Error sending slack notification: Request='.$e->getRequest().' Response: '.$e->getResponse())
+	$modx->log(MODX::LOG_LEVEL_ERROR, 'Error sending slack notification: Request='.$e->getRequest().' Response: '.$e->getResponse());
 	$modx->log(MODX::LOG_LEVEL_ERROR, 'Slack Request: '.$e->getRequest());
 	$modx->log(MODX::LOG_LEVEL_ERROR, 'Slack Response: '.$e->getResponse());
 }
