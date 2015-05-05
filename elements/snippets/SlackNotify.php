@@ -7,7 +7,7 @@
  *
  *  [[!SlackNotify? 
  *  &channel=`#general`
- * 	&username=`modx-bot`
+ * 	&botname=`modx-bot`
  *  &text=`*Error report for: abc.com*` 
  *  &color=`#d00000` 
  *  &fields=`[
